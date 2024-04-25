@@ -1,123 +1,88 @@
-
-
-/*estilo geral*/
-*{
-
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
 }
 
-body{
-    background-color: black;
-    height: 100vh;
+.ground {
+    position: absolute;
+    height: 750px;
+    width: 100%;
+    top: 25.4px;
+    left: 0px;
 }
 
-.interface{
-    max-width: 1280px;
+.game-board {
+    width: 100%;
+    height: 500px;
+
     margin: 0 auto;
-}
-
-.flex{
-    display: flex;
-}
-
-.btn-cintato button{
-    padding: 10px 40px;
-    font-size: 18px;
-    font-weight: 600;
-    background-color: blue;
-    border: 0;
-    border-radius: 30px;
-    cursor: pointer;
-    
-}
-
-/* estilo do cabeçalho */
-
-header{
-    padding: 40px 4%;
-}
-
-header > .interface{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-
-}
-header a{
-    color: rgb(165, 165, 165);
-    text-decoration: none;
-    display: inline-block;
-    transition: .2s;
-}
-
-header a:hover{
-    color: #fff;
-    transform: scale(1.05)
-}
-
-header nav ul{
-    list-style-type: none;
-}
-
-header nav li{
-    display: inline-block;
-    padding: 0 40px;
-}
-
-.btn-cintato button:hover{
-    box-shadow: 0px 0px 0px rgb(45, 45, 187);
-    transform: scale(1.05);
-    transition: 0.2s;
-}
-
-
-/*ESTILO DO TOPO DO SITE*/
-
-section.topo-do-site{
-    padding: 40px 4%;
-}
-
-section.topo-do-site .flex{
-    align-items: center;
-    justify-content: center;
-    gap: 90px;
-}
-
-.topo-do-site h1{
-    color: #fff;
-    font-size: 42px;
-    line-height: 40px;
-
-}
-
-.topo-do-site txt-topo-do-site h1 span{
-    color: blue;
-}
-
-p{
-        color: #fff;
-        margin: 40px 0;
-    }
-
-  img{
     position: relative;
-    animation: flutuar 2s ease-in-out infinite alternate;
+    overflow: hidden;
+    background: url('/image/sky.jpg');
 }
-   
-   
-   
-    @keyframes flutuar{
-        0%{
-            top: 0;
-        }
-        100%{
-            top: 30px;
-        }
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1s infinite linear;
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+.clouds {
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 6s infinite linear;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px
     }
 
+    to {
+        right: 100%;
+    }
+}
 
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
 
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
